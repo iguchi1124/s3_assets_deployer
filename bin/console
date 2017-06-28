@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 's3_assets_deployer'
+require 'pry'
+
+Pry.start
