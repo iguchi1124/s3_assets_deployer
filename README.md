@@ -22,8 +22,9 @@ $ gem install s3_assets_deployer
 
 ### Rails
 Add initializer at `config/iniitializers/s3_assets_deployer.rb`
+
 ```rb
-AssetsDeployer.configure do |config|
+S3AssetsDeployer.configure do |config|
   config.assets.root_path   = Rails.root.join('public')
   config.assets.prefix_paths = ['assets', 'packs']
   config.assets.ignore_paths = ['packs/manifest.json']
