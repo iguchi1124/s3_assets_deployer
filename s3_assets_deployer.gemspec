@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'rails', '>= 4.2'
+  s.add_dependency 'aws-sdk-s3'
+
   s.add_development_dependency 'pry'
-  s.add_development_dependency 'aws-sdk'
 end
