@@ -27,7 +27,6 @@ Add initializer at `config/iniitializers/s3_assets_deployer.rb`
 S3AssetsDeployer.configure do |config|
   config.assets.root_path   = Rails.root.join('public')
   config.assets.prefix_paths = ['assets', 'packs']
-  config.assets.ignore_paths = ['packs/manifest.json']
   # your storage service configurations
   config.s3.region     = 'ap-northeast-1'
   config.s3.bucket     = 'bucket_name'
