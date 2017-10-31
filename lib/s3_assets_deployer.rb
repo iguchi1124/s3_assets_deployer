@@ -8,7 +8,6 @@ module S3AssetsDeployer
       storage: s3,
       root_path: config.assets.root_path,
       prefix_paths: config.assets.prefix_paths,
-      ignore_paths: config.assets.ignore_paths
     )
 
     deployer.run

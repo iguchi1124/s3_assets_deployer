@@ -2,15 +2,12 @@ require 'mime/types'
 
 module S3AssetsDeployer
   class AssetFile
-    attr_reader :prefix
-
-    def initialize(prefix, path)
-      @prefix = prefix
+    def initialize(path)
       @path = path
     end
 
     def key
-      [prefix, File.basename(@path)].join('/')
+      @path
     end
 
     def body

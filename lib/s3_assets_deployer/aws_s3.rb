@@ -5,8 +5,8 @@ module S3AssetsDeployer
     def initialize(credentials:, region: nil, bucket: nil, prefix_key: nil)
       @credentials = credentials
       @bucket = bucket
-      @prefix_key = prefix_key
       @region = region
+      @prefix_key = prefix_key
     end
 
     def upload(files)

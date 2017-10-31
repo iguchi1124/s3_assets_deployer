@@ -3,10 +3,9 @@ module S3AssetsDeployer
     attr_accessor :assets,
                   :s3
 
-    class AssetsConfiguration < Struct.new(:root_path, :prefix_paths, :ignore_paths)
+    class AssetsConfiguration < Struct.new(:root_path, :prefix_paths)
       def initialize
         self.prefix_paths = ['assets']
-        self.ignore_paths = []
       end
     end
 
