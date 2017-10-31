@@ -5,13 +5,13 @@ module S3AssetsDeployer
 
     class AssetsConfiguration < Struct.new(:root_path, :prefix_paths)
       def initialize
+        self.root_path = Rails.root.join('public')
         self.prefix_paths = ['assets']
       end
     end
 
-    class S3Configuration < Struct.new(:credentials, :bucket, :prefix_key, :region)
+    class S3Configuration < Struct.new(:bucket, :prefix_key)
       def initialize
-        self.credentials = {}
       end
     end
 

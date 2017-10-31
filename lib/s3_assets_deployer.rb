@@ -23,10 +23,8 @@ module S3AssetsDeployer
 
   def self.s3
     @s3 ||= AwsS3.new(
-      credentials: config.s3.credentials,
       bucket: config.s3.bucket,
       prefix_key: config.s3.prefix_key,
-      region: config.s3.region
     )
   end
 end

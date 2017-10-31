@@ -2,10 +2,8 @@ require 'aws-sdk-s3'
 
 module S3AssetsDeployer
   class AwsS3
-    def initialize(credentials:, region: nil, bucket: nil, prefix_key: nil)
-      @credentials = credentials
+    def initialize(bucket: nil, prefix_key: nil)
       @bucket = bucket
-      @region = region
       @prefix_key = prefix_key
     end
 
@@ -23,34 +21,7 @@ module S3AssetsDeployer
     private
 
     def client
-      @client ||= Aws::S3::Client.new(client_options)
-    end
-
-    def client_options
-      hash = {}
-      hash[:credentials] = credentials
-      hash[:region] = region if !region.nil? && !region.empty?
-      hash
-    end
-
-    def credentials
-      if access_key_id && secret_access_key
-        Aws::Credentials.new(access_key_id, secret_access_key)
-      else
-        Aws::InstanceProfileCredentials.new
-      end
-    end
-
-    def access_key_id
-      @credentials[:access_key_id] || ENV['AWS_ACCESS_KEY_ID']
-    end
-
-    def secret_access_key
-      @credentials[:secret_access_key] || ENV['AWS_SECRET_ACCESS_KEY']
-    end
-
-    def region
-      @region || ENV['AWS_REGION']
+      @client ||= Aws::S3::Client.new
     end
   end
 end
